@@ -38,5 +38,3 @@ def save_image(folder, name, image_data):
     with open(image_file_path, 'wb') as image_file:
         print("Saving Image {} to  {}".format(name, image_file_path))
         shutil.copyfileobj(image_data, image_file)
-
-
