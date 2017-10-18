@@ -11,7 +11,6 @@ def main():
         if folder == "quit":
             print("Good Bye")
             return
-        print("after the quit")
         search_text = get_search_text_from_user()
         results = search_folder(folder, search_text)
         for result in results:
@@ -34,7 +33,7 @@ def get_folder_from_user():
         return "quit"
     elif not os.path.isdir(folder):
         print(os.getcwd())
-        print("failed")
+        print("Sorry that is not a directory")
         return None
 
     return os.path.abspath(folder)
@@ -67,6 +66,7 @@ def search_folder(folder, search_text):
 
         else:
             yield from search_file(full_item, search_text)
+
 
 if __name__ == '__main__':
     main()
